@@ -1,8 +1,59 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="160.0" prefWidth="400.0">
+         <children>
+            <TextField layoutY="6.0" prefHeight="40.0" prefWidth="400.0" />
+            <HBox layoutY="40.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+               </children>
+            </HBox>
+            <HBox layoutY="80.0" AnchorPane.topAnchor="80.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+               </children>
+            </HBox>
+            <HBox layoutY="120.0" AnchorPane.topAnchor="120.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+               </children>
+            </HBox>
+            <HBox layoutY="160.0" AnchorPane.topAnchor="160.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Button" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
 </GridPane>
