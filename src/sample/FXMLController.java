@@ -30,7 +30,7 @@ public class FXMLController implements Initializable {
         //if operator command input
         if (buttonText.matches("/*+-")) {
             selectedOpeeration = buttonText;
-            left = new BigDecimal(TextField.getText());
+            left = new BigDecimal(textField.getText());
             numberInput = false;
             return;
         }
@@ -38,11 +38,11 @@ public class FXMLController implements Initializable {
         if (buttonText.equals("=")) {
             final BigDecimal right;
             if (numberInput) {
-                right = new BigDecimal(TextField.getText());
+                right = new BigDecimal(textField.getText());
             } else {
                 right = left;
             }
-            TextField.setText(left.toString());
+            textField.setText(left.toString());
             left = calculate(left, right, selectedOpeeration);
             numberInput = false;
             return;
@@ -55,7 +55,7 @@ public class FXMLController implements Initializable {
 
             }
             selectedOpeeration = "";
-            TextField.clear();
+            textField.clear();
             numberInput = true;
             return;
         }
@@ -63,10 +63,10 @@ public class FXMLController implements Initializable {
         //if number command input
         if (buttonText.matches("[0-9\\,]")) {
             if (!numberInput) {
-                TextField.clear();
+                textField.clear();
                 numberInput = true;
             }
-            TextField.appendText(buttonText);
+            textField.appendText(buttonText);
             return;
         }
 
@@ -87,7 +87,7 @@ public class FXMLController implements Initializable {
     }
 
     @FXML
-    private TextField TextField;
+    private TextField textField;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
