@@ -23,8 +23,8 @@ public class FXMLController implements Initializable {
 
     @FXML
     public void buttonOperation(ActionEvent evt) {
-        Button buttonn = (Button) evt.getSource();
-        String buttonText = buttonn.getText();
+        Button button = (Button) evt.getSource();
+        String buttonText = button.getText();
         //if operator command input
         if (buttonText.matches("[/*+-]")) {
             selectedOperation = buttonText;
