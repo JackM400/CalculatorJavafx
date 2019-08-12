@@ -46,11 +46,9 @@ public class FXMLController implements Initializable {
             return;
         }
 
-        //clear command input
+        /* clear command input */
         if (buttonText.equals("Clear")) {
-            if (buttonText.equals("Clear")) {
-                LHS = BigDecimal.ZERO;
-            }
+            LHS = BigDecimal.ZERO;
             selectedOperation = "";
             textField.clear();
             numberInput = true;
@@ -58,18 +56,17 @@ public class FXMLController implements Initializable {
         }
 
         //if number command input
-        if (buttonText.matches("[0-9\\.]")) {
+        if (buttonText.matches("[0-9.]")) {
             if (!numberInput) {
                 textField.clear();
                 numberInput = true;
             }
             textField.appendText(buttonText);
-            return;
         }
 
     }
 
-    public static BigDecimal calculate(BigDecimal LHS, BigDecimal RHS, String operator) {
+    private static BigDecimal calculate(BigDecimal LHS, BigDecimal RHS, String operator) {
         switch (operator) {
             case "*":
                 return LHS.multiply(RHS);
