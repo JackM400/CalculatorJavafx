@@ -34,6 +34,19 @@ public class FXMLController implements Initializable {
             numberInput = false;
             return;
         }
+        //sum input
+        if (buttonText.equals("=")) {
+            final BigDecimal right;
+            if (numberInput) {
+                right = new BigDecimal(TextField.getText());
+            } else {
+                right = left;
+            }
+            TextField.setText(left.toString());
+            left = calculate(left, right, selectedOpeeration);
+            numberInput = false;
+            return;
+        }
 
         //clear command input
         if (buttonText.equals("C")) {
@@ -59,13 +72,18 @@ public class FXMLController implements Initializable {
 
     }
 
-    static BigDecimal calculate(BigDecimal left, BigDecimal right, String operator) {
+    public static BigDecimal calculate(BigDecimal left, BigDecimal right, String operator) {
         switch (operator) {
             case "*":
+                return left.multiply(right);
             case "/":
+                return left.divide(right);
             case "+":
+                return left.add(right);
             case "-":
+                return left.subtract(right);
         }
+        return right;
     }
 
     @FXML

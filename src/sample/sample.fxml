@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FXMLController">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -18,15 +18,15 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="240.0" prefWidth="400.0">
+      <AnchorPane fx:id="TextField" prefHeight="240.0" prefWidth="400.0">
          <children>
             <TextField layoutY="6.0" prefHeight="40.0" prefWidth="400.0" />
             <HBox layoutY="40.0">
                <children>
-                  <Button fx:id="TextField" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="7" />
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="8" />
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="9" />
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="\%" />
+                  <Button fx:id="textField" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="7" />
+                  <Button mnemonicParsing="false" onAction="#buttonOperation" prefHeight="40.0" prefWidth="100.0" text="8" />
+                  <Button mnemonicParsing="false" onAction="#buttonOperation" prefHeight="40.0" prefWidth="100.0" text="9" />
+                  <Button mnemonicParsing="false" onAction="#buttonOperation" prefHeight="40.0" prefWidth="100.0" text="\%" />
                </children>
             </HBox>
             <HBox layoutY="80.0" AnchorPane.topAnchor="80.0">
