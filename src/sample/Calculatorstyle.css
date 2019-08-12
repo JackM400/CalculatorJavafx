@@ -1,12 +1,12 @@
 .Button {
-    -fx-background-color: #392ba4;
+    -fx-background-color: #395993;
     -fx-text-fill: white;
     -fx-font: Arial, Helvetica, sans-serif;
 
 }
 
 .Clearbutton {
-    -fx-background-color: #FF8C00;
+    -fx-background-color: #394C6E;
     -fx-font: Arial, Helvetica, sans-serif;
 }
 
@@ -16,6 +16,10 @@
 }
 
 .textfield {
-    -fx-background-color: #F5F5DC;
+    -fx-background-color: #F2EEE7;
     -fx-font: Arial, Helvetica, sans-serif;
+}
+
+.background {
+    -fx-background-color: #39526E;
 }

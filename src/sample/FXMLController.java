@@ -47,10 +47,9 @@ public class FXMLController implements Initializable {
         }
 
         //clear command input
-        if (buttonText.equals("C")) {
-            if (buttonText.equals("C")) {
+        if (buttonText.equals("Clear")) {
+            if (buttonText.equals("Clear")) {
                 LHS = BigDecimal.ZERO;
-
             }
             selectedOperation = "";
             textField.clear();
