@@ -10,17 +10,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-import javax.swing.*;
-
 public class FXMLController implements Initializable {
     private boolean numberInput;
-    private BigDecimal left;
-    private String selectedOpeeration;
+    private BigDecimal LHS;
+    private String selectedOperation;
 
     public FXMLController() {
         this.numberInput = false;
-        this.left = BigDecimal.ZERO;
-        this.selectedOpeeration = "";
+        this.LHS = BigDecimal.ZERO;
+        this.selectedOperation = "";
     }
 
     @FXML
@@ -28,22 +26,22 @@ public class FXMLController implements Initializable {
         Button buttonn = (Button) evt.getSource();
         String buttonText = buttonn.getText();
         //if operator command input
-        if (buttonText.matches("/*+-")) {
-            selectedOpeeration = buttonText;
-            left = new BigDecimal(textField.getText());
+        if (buttonText.matches("[/*+-]")) {
+            selectedOperation = buttonText;
+            LHS = new BigDecimal(textField.getText());
             numberInput = false;
             return;
         }
         //sum input
         if (buttonText.equals("=")) {
-            final BigDecimal right;
+            final BigDecimal RHS;
             if (numberInput) {
-                right = new BigDecimal(textField.getText());
+                RHS = new BigDecimal(textField.getText());
             } else {
-                right = left;
+                RHS = LHS;
             }
-            textField.setText(left.toString());
-            left = calculate(left, right, selectedOpeeration);
+            textField.setText(LHS.toString());
+            LHS = calculate(LHS, RHS, selectedOperation);
             numberInput = false;
             return;
         }
@@ -51,17 +49,17 @@ public class FXMLController implements Initializable {
         //clear command input
         if (buttonText.equals("C")) {
             if (buttonText.equals("C")) {
-                left = BigDecimal.ZERO;
+                LHS = BigDecimal.ZERO;
 
             }
-            selectedOpeeration = "";
+            selectedOperation = "";
             textField.clear();
             numberInput = true;
             return;
         }
 
         //if number command input
-        if (buttonText.matches("[0-9\\,]")) {
+        if (buttonText.matches("[0-9\\.]")) {
             if (!numberInput) {
                 textField.clear();
                 numberInput = true;
@@ -72,18 +70,18 @@ public class FXMLController implements Initializable {
 
     }
 
-    public static BigDecimal calculate(BigDecimal left, BigDecimal right, String operator) {
+    public static BigDecimal calculate(BigDecimal LHS, BigDecimal RHS, String operator) {
         switch (operator) {
             case "*":
-                return left.multiply(right);
+                return LHS.multiply(RHS);
             case "/":
-                return left.divide(right);
+                return LHS.divide(RHS);
             case "+":
-                return left.add(right);
+                return LHS.add(RHS);
             case "-":
-                return left.subtract(right);
+                return LHS.subtract(RHS);
         }
-        return right;
+        return RHS;
     }
 
     @FXML

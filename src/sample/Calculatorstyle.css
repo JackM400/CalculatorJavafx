@@ -1,0 +1,21 @@
+.Button {
+    -fx-background-color: #392ba4;
+    -fx-text-fill: white;
+    -fx-font: Arial, Helvetica, sans-serif;
+
+}
+
+.Clearbutton {
+    -fx-background-color: #FF8C00;
+    -fx-font: Arial, Helvetica, sans-serif;
+}
+
+.opertionButton {
+    -fx-background-color: #4067B0;
+    -fx-font: Arial, Helvetica, sans-serif;
+}
+
+.textfield {
+    -fx-background-color: #F5F5DC;
+    -fx-font: Arial, Helvetica, sans-serif;
+}
