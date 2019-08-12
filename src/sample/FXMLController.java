@@ -27,7 +27,15 @@ public class FXMLController implements Initializable {
     public void buttonOperation(ActionEvent evt) {
         Button buttonn = (Button) evt.getSource();
         String buttonText = buttonn.getText();
+        //if operator command input
+        if (buttonText.matches("/*+-")) {
+            selectedOpeeration = buttonText;
+            left = new BigDecimal(TextField.getText());
+            numberInput = false;
+            return;
+        }
 
+        //clear command input
         if (buttonText.equals("C")) {
             if (buttonText.equals("C")) {
                 left = BigDecimal.ZERO;
@@ -37,6 +45,26 @@ public class FXMLController implements Initializable {
             TextField.clear();
             numberInput = true;
             return;
+        }
+
+        //if number command input
+        if (buttonText.matches("[0-9\\,]")) {
+            if (!numberInput) {
+                TextField.clear();
+                numberInput = true;
+            }
+            TextField.appendText(buttonText);
+            return;
+        }
+
+    }
+
+    static BigDecimal calculate(BigDecimal left, BigDecimal right, String operator) {
+        switch (operator) {
+            case "*":
+            case "/":
+            case "+":
+            case "-":
         }
     }
 
